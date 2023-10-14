@@ -89,7 +89,11 @@ def submit_game_result(game_id, board, winner):
     # Create the outputs object with the OP_RETURN data and an address for the transaction fee
     outputs = {
         'data': hex_payload,  # OP_RETURN data
-        'GLXZRqjavBKAkjoQgDsKNnPAvdDBpTyEb4': 10  # Transaction fee amount in coins
+        'GLXZRqjavBKAkjoQgDsKNnPAvdDBpTyEb4': 10  
+        # Transaction fee amount in coins
+        # Current Change works as e.g. balance used in address
+        # as a whole ""utxo 100 , tx fee 10 , tx fee = 90 , change = 10
+        #refactoring needed for this in reverse         
     }
 
     # Create
